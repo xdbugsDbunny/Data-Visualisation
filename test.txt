@@ -1,0 +1,55 @@
+        <Box sx={{
+            "& .pro-sidebar-inner":{
+                background: `${colors.primary[400]} !important`
+            },
+            "& .pro-icon-wrapper":{
+                backgroundColor:  "transparent !important"
+            },
+            "& .pro-inner-item":{
+                padding: "5px 35px 5px 20px !important"
+            },
+            "& .pro-inner-item:hover":{
+                color: "#868dfb !important" 
+            },
+            "& .pro-menu-item.active":{
+                color: "#6870fa !important"
+            }
+        }}>
+            <Sidebar collapsed={open}>
+                <Menu iconShape="square">
+                    <MenuItem 
+                        onClick={()=>setOpen(!open)} 
+                        icon={open ? <MenuOutlinedIcon/> : undefined }
+                        style={{
+                            margin: "10px 0 20px 0",
+                            color: colors.grey[100]
+                        }}
+                    >
+                        {
+                            !open && (
+                                <Box display="flex" justifyContent='space-around' alignItems='center' marginLeft='15px'>
+                                    <Typography variant="h3" color={colors.grey[100]}>ADMINIS</Typography>
+                                    <IconButton onClick={()=>setOpen(!open)}>
+                                        <MenuOutlinedIcon/>
+                                    </IconButton>
+                                </Box>
+                            )
+                        }
+                    </MenuItem>
+                    {
+                        !open && (
+                            <Box mb="25px">
+                                <Box display='flex' justifyContent='center' alignContent='center'>
+                                    <img alt="profile-pic" width='100px' height='100px' src="https://www.pngall.com/wp-content/uploads/5/Profile-Transparent.png" style={{cursor:"pointer", borderRadius:"50%"}}/>
+                                </Box>
+
+                                <Box textAlign="center">
+                                    <Typography variant="h2" color={colors.grey[100]} fontWeight='bold' sx={{marginTop:'10px'}} >Suraj Singh Negi</Typography>
+                                    <Typography variant="h5" color={colors.greenAccent[500]}>MERN STACK Developer</Typography>
+                                </Box>
+                            </Box>
+                        )
+                    }
+                </Menu>
+            </Sidebar>
+        </Box>
